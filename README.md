@@ -171,4 +171,93 @@ Enter the CHROOT environment by:
 arch-chroot /mnt
 ```
 
-**The login prompt will have changed**.
+***The login prompt will have changed***.
+
+## 11. Create and Mount a Swapfile
+
+Create the swapfile by:
+
+```bash
+fallocate -l 8GB /swapfile
+```
+
+Change the permissions of the swapfile by:
+
+```bash
+chmod 600 /swapfile
+```
+
+Format and activate the swapfile by:
+
+```bash
+mkswap /swapfile
+swapon /swapfile
+```
+
+Add the swapfile to `fstab` by:
+
+```bash
+nano /etc/fstab
+```
+
+Add the followin to the end of the file:
+
+```bash
+/swapfile none swap defaults 0 0
+```
+
+## 12. Set Localisation Details
+
+Set the timezone by:
+
+```bash
+timedatectl set-timezone Australia/Sydney
+```
+
+Sychronise hardware clock to system clock with:
+
+```bash
+hwclock --systohc --localtime
+```
+
+Edit the `locale.gen` file with:
+
+```bash
+nano /etc/locale.gen
+```
+
+Here we uncomment our locale e.g. `en_AU-UTF-8` and save and exit.
+
+Then enter:
+
+```bash
+locale-gen
+echo "LANG=en_AU.UTF-8" >> /etc/locale.conf
+echo "KEYMAP=us" >> /etc/vconsole.conf
+```
+
+## 13. Set Network Details
+
+Set `hostname` by:
+
+```bash
+echo hostname > /etc/hostname
+```
+
+Now add the following to the `hosts` file:
+
+```bash
+127.0.0.1    localhost
+::1          localhost
+127.0.1.1    hostname.localdomain    hostname
+```
+
+## 14. Set Root Password
+
+Set root password by entering:
+
+```bash
+passwd
+```
+
+## 

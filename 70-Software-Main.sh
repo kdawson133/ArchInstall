@@ -60,7 +60,6 @@ PKGS=(
 
     # DEVELOPMENT ---------------------------------------------------------
     
-    'git'                   # Version control system
     'meld'                  # File/directory comparison
     'nodejs'                # Javascript runtime environment
     'npm'                   # Node package manager

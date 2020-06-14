@@ -9,6 +9,8 @@ PKGS=(
         'cinnamon'				# Cinnamon
         'nemo-fileroller'		# cinnamon plugin
         'xdg-utils'				# Xdg utilities
+        'lightdm'				# Light DM 
+#        'gdm'					# Gnome DM
 )
 
 for PKG in "${PKGS[@]}"; do

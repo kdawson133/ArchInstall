@@ -7,7 +7,7 @@ PKGS=(
 
     # SYSTEM --------------------------------------------------------------
 
-    'linux'                 # Standard kernel
+    'linux-LTS'             # Stable kernel
     'linux-headers'         # For compiling modules
     'base-devel'            # Required for compilation
 

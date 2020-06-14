@@ -61,6 +61,8 @@ PKGS=(
     'mint-themes-git'
     'mint-y-icons-git'
     'mint-x-icons-git'
+    'lightdm-slick-greeter'
+    'lightdm-settings'
 )
 
 
@@ -72,5 +74,5 @@ for PKG in "${PKGS[@]}"; do
 done
 
 echo
-echo "Done!"
+echo "== AUR Software Installed =="
 echo

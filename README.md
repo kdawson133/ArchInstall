@@ -316,3 +316,8 @@ For a wifi connection:
 nmtui
 ```
 
+## 19 Run Scripts
+Run the all the scrips in numerical order and then reboot.
+
+** You are now done!! **
+

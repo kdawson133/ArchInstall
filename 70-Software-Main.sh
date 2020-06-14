@@ -56,7 +56,7 @@ PKGS=(
 
     'variety'               # Wallpaper changer
     'xfburn'                # CD burning application
-    'steam'                 # Valve Game Delivery System
+    #'steam'                 # Valve Game Delivery System
 
     # DEVELOPMENT ---------------------------------------------------------
     

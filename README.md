@@ -46,4 +46,42 @@ ping -c 3 google.com
 ```
 
 
-## 
+## 5. Enable NTP
+
+Enable NTP by:
+
+```bash
+timedatectl set-ntp true
+```
+
+## 6. Configure the Mirrorlist
+
+Start by synchronising pacman by:
+
+```bash
+pacman -Syyy
+```
+
+The install `reflector` by:
+
+```bash
+pacman -S reflector
+```
+
+Backup the `mirrorlist` file with:
+```bash
+mv /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.Backup
+```
+
+Then run `reflector` to find our best mirrors with:
+
+```bash
+reflector -c Australia -a 6 --sort rate --save /etc/pacman.d/mirrorlist
+```
+
+Then synchronise our repositories again:
+
+```bash
+pacman -Syyy
+```
+

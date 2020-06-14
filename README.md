@@ -280,4 +280,25 @@ Configure the grub with:
 grub-mkconfig -o /boot/grub/grub.cfg
 ```
 
-## 
+## 16. Create a New User
+
+Creat a new user with this:
+
+```bash
+useradd -mG wheel username
+passwd username
+EDITOR=nano visudo
+```
+
+Then uncomment out the wheel line `# %wheel ALL=(ALL) ALL`, save and exit.
+
+## 17. Reboot
+
+Time to reboot, exit the chroot, unmount partitions and reboot by:
+
+```bash
+exit
+umount -a
+reboot
+```
+

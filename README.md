@@ -302,3 +302,17 @@ umount -a
 reboot
 ```
 
+## 18. Login and Recheck the Internet Connection
+
+Enter the following:
+
+```bash
+ip a
+```
+
+For a wifi connection:
+
+```bash
+nmtui
+```
+

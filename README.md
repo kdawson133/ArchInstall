@@ -146,7 +146,7 @@ Now run `lsblk` to confirm our mount points.
 Run the pacstrap script like so:
 
 ```bash
-pacstrap /mnt base linux linux-firmware nano amd-ucode
+pacstrap /mnt base linux linux-firmware nano git amd-ucode
 ```
 
 ## 10. Create the File System Table

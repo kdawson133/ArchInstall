@@ -27,7 +27,6 @@ PKGS=(
     'numlockx'              # Turns on numlock in X11
     'openssh'               # SSH connectivity tools
     'os-prober'             # Utility to detect other OSes
-    'avahi'                 # Service discovery using mDNS
     'rsync'                 # Remote file sync utility
     'speedtest-cli'         # Internet speed via terminal
     'unrar'                 # RAR compression program

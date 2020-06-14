@@ -1,5 +1,5 @@
 # ArchInstall
-Arch Install Guide and Scripts
+Arch Install Guide and Scripts (Multiboot)
 
 ## 1. Download 
 Download and burn the Archlinux ISO to removable media.
@@ -85,3 +85,36 @@ Then synchronise our repositories again:
 pacman -Syyy
 ```
 
+## 7. Patitioning Disks
+
+List your block devices by:
+
+```bash
+lsblk
+```
+
+Then examine your windows disk for EFI partition:
+
+```bash
+cfdisk /dev/sda
+```
+
+Take note of the EFI partition e.g. `/dev/sda2` and our windows partiton /dev/sda4
+
+Partition our new linux disk e.g. /dev/sdb
+
+```bash
+cfdisk /dev/sdb
+```
+
+Create a new partition using the complete disk.
+
+Once this complete run `lsblk` and we will see our new partition in the listing e.g. `sdb1`.
+
+Now we format the partition by:
+
+```bash
+mkfs.ext4 /dev/sdb1
+```
+
+## 

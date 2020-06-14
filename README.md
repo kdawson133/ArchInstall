@@ -316,8 +316,20 @@ For a wifi connection:
 nmtui
 ```
 
-## 19 Run Scripts
-Run the all the scrips in numerical order and then reboot.
+## 19. Run Scripts
+run the following command:
+
+```bash
+git clone https://github.com/kdawson133/ArchInstall.git
+cd ArchInstall
+chmod +x *.sh
+```
+
+then run the all the scrips in numerical order, for example:
+```bash
+sudo sh 00-Mirrors.sh 
+```
+ then reboot.
 
 ** You are now done!! **
 

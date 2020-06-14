@@ -290,7 +290,7 @@ passwd username
 EDITOR=nano visudo
 ```
 
-Then uncomment out the wheel line `# %wheel ALL=(ALL) ALL`, save and exit.
+Then uncomment out the wheel line `# %wheel ALL=(ALL) ALL`, save and exit. (`nano /etc/sudoers` will do the same thing)
 
 ## 17. Reboot
 

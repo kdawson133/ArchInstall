@@ -260,4 +260,24 @@ Set root password by entering:
 passwd
 ```
 
+## 15. Install the Bootloader
+
+Install the required packages with:
+
+```bash
+pacman -S grub efibootmgr
+```
+
+Now we actually install the bootloader by:
+
+```bash
+grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB
+```
+
+Configure the grub with:
+
+```bash
+grub-mkconfig -o /boot/grub/grub.cfg
+```
+
 ## 

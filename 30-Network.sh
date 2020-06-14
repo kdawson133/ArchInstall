@@ -9,6 +9,9 @@ PKGS=(
         'dialog'                    # Enables shell scripts to trigger dialog boxex
         'networkmanager'            # Network connection manager
         'network-manager-applet'    # System tray icon/utility for network connectivity
+        'avahi'                 	# Service discovery using mDNS
+        'nss-mdns'					# mDNS host resolution
+        'gvfs-smb'                  # More File System Stuff
 )
 
 for PKG in "${PKGS[@]}"; do

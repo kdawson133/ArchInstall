@@ -19,6 +19,7 @@ PKGS=(
     'file-roller'           # Archive utility
     'gtop'                  # System monitoring via terminal
     'gufw'                  # Firewall manager
+    'libsecret'             # Storing passwords
     'hardinfo'              # Hardware info app
     'htop'                  # Process viewer
     'neofetch'              # Shows system info when you launch terminal

@@ -260,7 +260,7 @@ Set `hostname` by:
 echo hostname > /etc/hostname
 ```
 
-Now add the following to the `hosts` file:
+Now add the following to the `/etc/hosts` file:
 
 ```bash
 127.0.0.1    localhost

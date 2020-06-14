@@ -139,6 +139,36 @@ mkdir /mnt/windows
 mount /dev/sda4
 ```
 
-Now run `lsblk` to conform our mount points.
+Now run `lsblk` to confirm our mount points.
 
-## 
+## 9. Install the Base Packages
+
+Run the pacstrap script like so:
+
+```bash
+pacstrap /mnt base linux linux-firmware nano amd-ucode
+```
+
+## 10. Create the File System Table
+
+Generat the `fstab` file like so:
+
+```bash
+genfstab -U /mnt >> /mnt/etc/fstab
+```
+
+Check our output with:
+
+```bash
+cat /mnt/etc/fstab
+```
+
+## 11. Enter the New System
+
+Enter the CHROOT environment by:
+
+```bash
+arch-chroot /mnt
+```
+
+**The login prompt will have changed**.

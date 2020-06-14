@@ -7,6 +7,7 @@ PKGS=(
         'gnome'                 # Gnome
         'gnome-extra'			# Gnome extras
         'cinnamon'				# Cinnamon
+        'nemo-fileroller'		# cinnamon plugin
         'xdg-utils'				# Xdg utilities
 )
 

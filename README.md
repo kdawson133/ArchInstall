@@ -93,7 +93,7 @@ List your block devices by:
 lsblk
 ```
 
-Then examine your windows disk for EFI partition:
+Then examine your windows disk for EFI partition by the following command:
 
 ```bash
 cfdisk /dev/sda
@@ -109,12 +109,36 @@ cfdisk /dev/sdb
 
 Create a new partition using the complete disk.
 
-Once this complete run `lsblk` and we will see our new partition in the listing e.g. `sdb1`.
+Once this is complete run `lsblk` and we will see our new partition in the listing e.g. `sdb1`.
 
 Now we format the partition by:
 
 ```bash
 mkfs.ext4 /dev/sdb1
 ```
+
+## 8. Mount the Partitions
+
+mount our freshly created install partition by:
+
+```bash
+mount /dev/sdb1 /mnt
+```
+
+Now we mount our EFI partiton by:
+
+```bash
+mkdir /mnt/boot
+mount /dev/sda2 /mnt/boot
+```
+
+Now we mount  our windows partition by:
+
+```bash
+mkdir /mnt/windows
+mount /dev/sda4
+```
+
+Now run `lsblk` to conform our mount points.
 
 ## 

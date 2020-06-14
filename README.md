@@ -12,7 +12,14 @@ Boot the target system using the removable media prepared in step one.
 To list key maps use the following command:
 
 ```bash
-localctl list-keymaps | AU
+localctl list-keymaps | grep US
 ```
 
+To load the key map enter the following:
+
+```bash
+loadkeys us
+```
+
+## 4. Establish Internet Connectivity
 

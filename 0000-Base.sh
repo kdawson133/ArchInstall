@@ -70,9 +70,9 @@ arch-chroot /mnt echo "en_AU.UTF-8" >> /etc/locale.conf
 
 arch-chroot /mnt locale-gen
 
-arch-chroot /mnt echo en_AU.UTF-8 >> /etc/locale.Configure
-arch-chroot /mnt export en_AU.UTF-8
-arch-chroot /mnt echo KEYMAP=$keymap >> /etc/vconsole.conf
+arch-chroot /mnt echo "LANG=en_AU.UTF-8" >> /etc/locale.conf
+arch-chroot /mnt export "LANG=en_AU.UTF-8"
+arch-chroot /mnt echo "KEYMAP=$keymap" >> /etc/vconsole.conf
 
 # Set Network
 
@@ -88,7 +88,7 @@ arch-chroot /mnt passwd
 
 # Install Bootloader
 
-arch-chroot /mnt pacman -S grub efibootmgr networkmanager network-manager-applet wireless_tools wpa_supplicant dialog os-prober mtools dosfstools base-devel linux-headers reflector git bluez bluez-utils bluez-libs pulseaudio-bluetooth cups ntfs-3g openssh avahi
+arch-chroot /mnt pacman -S grub efibootmgr networkmanager network-manager-applet wireless_tools wpa_supplicant dialog os-prober mtools dosfstools base-devel linux-headers reflector git bluez bluez-utils bluez-libs pulseaudio-bluetooth cups ntfs-3g openssh avahi --noconfirm --needed
 
 arch-chroot /mnt grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=ARCH
 

@@ -89,7 +89,7 @@ arch-chroot /mnt hwclock --systohc --localtime
 arch-chroot /mnt echo "en_AU.UTF-8" >> /etc/locale.conf
 arch-chroot /mnt locale-gen
 arch-chroot /mnt echo "LANG=en_AU.UTF-8" >> /etc/locale.conf
-arch-chroot /mnt export "LANG=en_AU.UTF-8"
+#arch-chroot /mnt export "LANG=en_AU.UTF-8"
 arch-chroot /mnt echo "KEYMAP=$keymap" >> /etc/vconsole.conf
 echo
 echo "== Localisation Set =="

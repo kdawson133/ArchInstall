@@ -66,9 +66,9 @@ timedatectl set-timezone $timezone
 
 arch-chroot /mnt hwclock --systohc --localtime
 
-arch-chroot /mnt echo "en_AU.UTF-8" >> /etc/locale.gen
+arch-chroot /mnt echo "en_AU.UTF-8" >> /etc/locale.conf
 
-arch-chroot /mnt local-gen
+arch-chroot /mnt locale-gen
 
 arch-chroot /mnt echo en_AU.UTF-8 >> /etc/locale.Configure
 arch-chroot /mnt export en_AU.UTF-8
@@ -98,7 +98,7 @@ arch-chroot /mnt grub-mkconfig -o /boot/grub/grub.cfg
 
 arch-chroot /mnt arch-chroot /mnt systemctl enable NetworkManager
 arch-chroot /mnt systemctl enable bluetooth
-arch-chroot /mnt systemctl enaarch-chroot /mnt blarch-chroot /mnt e org.cups.cupsd
+arch-chroot /mnt systemctl enable org.cups.cupsd
 arch-chroot /mnt systemctl enable sshd
 arch-chroot /mnt systemctl enable avahi-daemon
 
@@ -106,7 +106,7 @@ arch-chroot /mnt systemctl enable avahi-daemon
 
 arch-chroot /mnt useradd -mG wheel $username
 arch-chroot /mnt passwd $username
-arch-chroot /mnt EDITOR=nano visudo
+arch-chroot /mnt "EDITOR=nano visudo"
 
 # Reboot
 

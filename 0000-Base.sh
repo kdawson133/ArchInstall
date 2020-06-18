@@ -56,7 +56,7 @@ mount $rootpart /mnt
 mkdir /mnt/boot
 mount $bootpart /mnt/boot
 echo
-echo "Partitions Mounted =="
+echo "== Partitions Mounted =="
 
 # Install Base
 echo

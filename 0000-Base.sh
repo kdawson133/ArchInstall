@@ -9,7 +9,7 @@ bootpart=/dev/sda1
 swappart=/dev/sda2
 rootpart=/dev/sda3
 
-microcode=ucode-amd
+microcode=		#ucode-amd
 
 timezone=Australia/Sydney
 

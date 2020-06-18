@@ -35,6 +35,7 @@ pacman -Syyy
 
 # Formatting Partitions
 
+mkfs.fat -F32 $bootpart 
 mkfs.ext4 $rootpart
 mkswap $swappart
 
@@ -108,8 +109,8 @@ passwd $username
 EDITOR=nano visudo
 
 # Reboot
+
 exit
 umount -a
-
-echo "Reboot th System Now"
+echo "Reboot the System Now"
 

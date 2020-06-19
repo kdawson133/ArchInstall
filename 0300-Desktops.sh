@@ -17,7 +17,9 @@ for PKG in "${PKGS[@]}"; do
     sudo pacman -S "$PKG" --noconfirm --needed
 done
 
-sudo nano /etc/lightdm/lightdm.conf
+sudo cp lightdm.conf /etc/lightdm/
+sudo cp slick-greeter.conf /etc/lightdm
+sudo cp lightdm-slick-greeter.png /usr/share/slick-greeter 
 
 sudo systemctl enable lightdm.service
 sudo systemctl start lightdm.service

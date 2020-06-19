@@ -7,7 +7,7 @@ sudo pacman -Syyy
 # Install Refector
 sudo pacman -S reflector --noconfirm --needed
 # backup mirrorlist
-cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.backup
+sudo cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.backup
 # run reflector
 sudo reflector -c Australia 6 --sort rate --save /etc/pacman.d/mirrorlist
 # resynchronise repositories

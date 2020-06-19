@@ -129,7 +129,7 @@ echo
 echo
 echo "== Enabling Services =="
 echo
-arch-chroot /mnt arch-chroot /mnt systemctl enable NetworkManager
+arch-chroot /mnt systemctl enable NetworkManager
 arch-chroot /mnt systemctl enable bluetooth
 arch-chroot /mnt systemctl enable org.cups.cupsd
 arch-chroot /mnt systemctl enable sshd

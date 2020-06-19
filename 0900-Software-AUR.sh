@@ -71,7 +71,7 @@ makepkg -si
 for PKG in "${PKGS[@]}"; do
     yay -S --noconfirm $PKG
 done
-
+cp lightdm-slick-greeter.png /usr/share/slick-greeter/lightdm-slick-greeter.png
 echo
 echo "== AUR Software Installed =="
 echo

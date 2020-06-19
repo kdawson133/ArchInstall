@@ -144,7 +144,6 @@ echo "== Creating New User - $username =="
 echo
 arch-chroot /mnt useradd -mG wheel $username
 arch-chroot /mnt passwd $username
-arch-chroot /mnt "nano /etc/sudoers"
 echo
 echo "== New User - $username Created =="
 

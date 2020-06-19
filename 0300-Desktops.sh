@@ -22,7 +22,7 @@ sudo cp slick-greeter.conf /etc/lightdm
 sudo cp lightdm-slick-greeter.png /usr/share/slick-greeter 
 
 sudo systemctl enable lightdm.service
-sudo systemctl start lightdm.service
+#sudo systemctl start lightdm.service
 
 echo
 echo "== Desktops Installed =="

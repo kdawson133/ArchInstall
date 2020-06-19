@@ -17,10 +17,10 @@ for PKG in "${PKGS[@]}"; do
     sudo pacman -S "$PKG" --noconfirm --needed
 done
 
-nano /etc/lightdm/lightdm.conf
+sudo nano /etc/lightdm/lightdm.conf
 
-systemctl enable lightdm.service
-systemctl start lightdm.service
+sudo systemctl enable lightdm.service
+sudo systemctl start lightdm.service
 
 echo
 echo "== Desktops Installed =="

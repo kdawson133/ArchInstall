@@ -57,9 +57,9 @@ PKGS=(
     'sardi-icons'
     'alacarte-xfce'
     'mugshot'
-    'mint-themes-git'
-    'mint-y-icons-git'
-    'mint-x-icons-git'
+    'mint-themes'
+    'mint-y-icons'
+    'mint-x-icons'
     'lightdm-slick-greeter'
     'lightdm-settings'
 )

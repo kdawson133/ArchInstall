@@ -46,7 +46,12 @@ cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.backup
 reflector -c $syscountry -a 6 --sort rate --save /etc/pacman.d/mirrorlist
 pacman -Syyy
 echo
+cat /etc/pacman.d/mirrorlist
+echo
 echo "== Mirrorlist Configured =="
+echo
+read -p "Press Enter to Continue...."
+clear
 
 # Formatting Partitions
 echo
@@ -55,8 +60,10 @@ echo
 mkfs.fat -F32 $bootpart 
 mkfs.ext4 $rootpart
 mkswap $swappart
+lsblk
 echo
 echo "== Partitions Formatted =="
+echo
 
 # Mount Partitions
 echo
@@ -66,8 +73,11 @@ swapon $swappart
 mount $rootpart /mnt
 mkdir /mnt/boot
 mount $bootpart /mnt/boot
+read -p "Press Enter to Continue...."
+clear
 echo
 echo "== Partitions Mounted =="
+echo
 
 # Install Base
 echo

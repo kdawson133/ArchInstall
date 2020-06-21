@@ -13,10 +13,10 @@
 ###########################################
 
 # Variables
-selkeyboard=us
-selcountry=Australia
-sellocale=en_AU.UTF-8
-seltimezone=Australia/Sydney
+syskeyboard=us
+syscountry=Australia
+syslocale=en_AU.UTF-8
+systimezone=Australia/Sydney
 
 bootpart=/dev/sda1
 swappart=/dev/sda2
@@ -30,7 +30,7 @@ username=ktdawson
 
 # Load the keymap
 
-loadkeys=$keymap
+loadkeys=$syskeyboard
 
 # Enable NTP
 
@@ -43,7 +43,7 @@ echo
 pacman -Syyy
 pacman -S reflector --noconfirm
 cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.backup
-reflector -c $selcountry -a 6 --sort rate --save /etc/pacman.d/mirrorlist
+reflector -c $syscountry -a 6 --sort rate --save /etc/pacman.d/mirrorlist
 pacman -Syyy
 echo
 echo "== Mirrorlist Configured =="
@@ -95,12 +95,12 @@ echo
 echo
 echo "== Setting Localisation =="
 echo
-arch-chroot /mnt timedatectl set-timezone $seltimezone
+arch-chroot /mnt timedatectl set-timezone $systimezone
 arch-chroot /mnt hwclock --systohc --localtime
-arch-chroot /mnt echo $sellocale >> /etc/locale.conf
+arch-chroot /mnt echo $syslocale >> /etc/locale.conf
 arch-chroot /mnt locale-gen
-arch-chroot /mnt echo $sellocale >> /etc/locale.conf
-arch-chroot /mnt echo "KEYMAP=$keymap" >> /etc/vconsole.conf
+arch-chroot /mnt echo $syslocale >> /etc/locale.conf
+arch-chroot /mnt echo KEYMAP=$syskeyboard >> /etc/vconsole.conf
 echo
 echo "== Localisation Set =="
 echo

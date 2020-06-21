@@ -60,7 +60,6 @@ echo
 mkfs.fat -F32 $bootpart 
 mkfs.ext4 $rootpart
 mkswap $swappart
-lsblk
 echo
 echo "== Partitions Formatted =="
 echo
@@ -73,6 +72,7 @@ swapon $swappart
 mount $rootpart /mnt
 mkdir /mnt/boot
 mount $bootpart /mnt/boot
+lsblk
 read -p "Press Enter to Continue...."
 clear
 echo

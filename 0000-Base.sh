@@ -87,6 +87,8 @@ pacstrap /mnt base linux linux-firmware nano $microcode
 echo
 echo "== Base Installed =="
 echo
+read -p "Press Enter to Continue...."
+clear
 
 # Generate file system table
 echo
@@ -98,6 +100,8 @@ cat /mnt/etc/fstab
 echo
 echo "== Filesystem Table Generated =="
 echo
+read -p "Press Enter to Continue...."
+clear
 
 # Enter CHROOT Environment
 
@@ -107,13 +111,17 @@ echo "== Setting Localisation =="
 echo
 arch-chroot /mnt timedatectl set-timezone $systimezone
 arch-chroot /mnt hwclock --systohc --localtime
-arch-chroot /mnt echo $syslocale >> /etc/locale.conf
+arch-chroot /mnt echo $syslocale >> /etc/locale.gen
 arch-chroot /mnt locale-gen
 arch-chroot /mnt echo $syslocale >> /etc/locale.conf
 arch-chroot /mnt echo KEYMAP=$syskeyboard >> /etc/vconsole.conf
+cat /mnt/etc/locale.conf
+cat /mnt/etc/vconsole.conf
 echo
 echo "== Localisation Set =="
 echo
+read -p "Press Enter to Continue...."
+clear
 
 # Set Network
 echo
@@ -123,9 +131,14 @@ echo $hostname > /mnt/etc/hostname
 echo "127.0.0.1" '/t' "localhost" >> /mnt/etc/hosts
 echo "::1" '/t' '/t' "localhost" >> /mnt/etc/hosts
 echo "127.0.1.1" '\t' $hostname "localdomain" '\t' "$hostname" >> /mnt/etc/hosts
+cat /mnt/etc/hostname
+echo
+cat /mnt/etc/hosts
 echo
 echo "== Network Set =="
 echo
+read -p "Press Enter to Continue...."
+clear
 
 # Set Root Password
 echo
@@ -134,6 +147,8 @@ arch-chroot /mnt passwd
 echo
 echo "== Root Password Set =="
 echo
+read -p "Press Enter to Continue...."
+clear
 
 # Install Bootloader
 echo
@@ -144,6 +159,8 @@ arch-chroot /mnt grub-mkconfig -o /boot/grub/grub.cfg
 echo
 echo "== Bootloader Installed =="
 echo
+read -p "Press Enter to Continue...."
+clear
 
 # Enable services
 echo
@@ -157,6 +174,8 @@ arch-chroot /mnt systemctl enable avahi-daemon
 echo
 echo "== Services Enabled =="
 echo
+read -p "Press Enter to Continue...."
+clear
 
 # Create New User
 echo 
@@ -168,6 +187,8 @@ nano /mnt/etc/sudoers
 echo
 echo "== New User - $username Created =="
 echo
+read -p "Press Enter to Continue...."
+clear
 
 # Reboot
 

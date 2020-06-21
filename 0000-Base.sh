@@ -100,7 +100,6 @@ arch-chroot /mnt hwclock --systohc --localtime
 arch-chroot /mnt echo $sellocale >> /etc/locale.conf
 arch-chroot /mnt locale-gen
 arch-chroot /mnt echo $sellocale >> /etc/locale.conf
-export $sellocale
 arch-chroot /mnt echo "KEYMAP=$keymap" >> /etc/vconsole.conf
 echo
 echo "== Localisation Set =="

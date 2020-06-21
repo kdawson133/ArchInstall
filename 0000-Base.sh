@@ -1,17 +1,8 @@
 #!/bin/sh
 #
-#  **          **                                                 **   ****   **** 
-# /**         /**                                                ***  */// * */// *
-# /**  **     /**  ******   ***     **  ******  ******  ******* //** /    /*/    /*
-# /** **   ****** //////** //**  * /** **////  **////**//**///** /**    ***    *** 
-# /****   **///**  *******  /** ***/**//***** /**   /** /**  /** /**   /// *  /// *
-# /**/** /**  /** **////**  /****/**** /////**/**   /** /**  /** /**  *   /* *   /*
-# /**//**//******//******** ***/ ///** ****** //******  ***  /** ****/ **** / **** 
-# //  //  //////  //////// ///    /// //////   //////  ///   // ////  ////   ////  
-#
 #     __       __                               _____________
-#    / /______/ /___ __      ___________  ____ <  /__  /__  /
-#   / //_/ __  / __ `/ | /| / / ___/ __ \/ __ \/ / /_ < /_ < 
+#    / /______/ /___ __      ___________  ____ <  /__  /__  /	https://github.com/kdawson133
+#   / //_/ __  / __ `/ | /| / / ___/ __ \/ __ \/ / /_ < /_ < 	@kirk133
 #  / ,< / /_/ / /_/ /| |/ |/ (__  ) /_/ / / / / /___/ /__/ / 
 # /_/|_|\__,_/\__,_/ |__/|__/____/\____/_/ /_/_//____/____/  
 #                                                           
@@ -22,16 +13,16 @@
 ###########################################
 
 # Variables
-keymap=us
-country=Australia
+sel-keyboard=us
+sel-country=Australia
+sel-locale=en_AU.UTF-8
+sel-timezone=Australia/Sydney
 
 bootpart=/dev/sda1
 swappart=/dev/sda2
 rootpart=/dev/sda3
 
 microcode=		#ucode-amd
-
-timezone=Australia/Sydney
 
 hostname=arch
 
@@ -52,7 +43,7 @@ echo
 pacman -Syyy
 pacman -S reflector --noconfirm
 cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.backup
-reflector -c $country -a 6 --sort rate --save /etc/pacman.d/mirrorlist
+reflector -c $sel-country -a 6 --sort rate --save /etc/pacman.d/mirrorlist
 pacman -Syyy
 echo
 echo "== Mirrorlist Configured =="
@@ -104,12 +95,12 @@ echo
 echo
 echo "== Setting Localisation =="
 echo
-timedatectl set-timezone $timezone
+arch-chroot /mnt timedatectl set-timezone $sel-timezone
 arch-chroot /mnt hwclock --systohc --localtime
-arch-chroot /mnt echo "en_AU.UTF-8" >> /etc/locale.conf
+arch-chroot /mnt echo $sel-locale >> /etc/locale.conf
 arch-chroot /mnt locale-gen
-arch-chroot /mnt echo "LANG=en_AU.UTF-8" >> /etc/locale.conf
-#arch-chroot /mnt export "LANG=en_AU.UTF-8"
+arch-chroot /mnt echo $sel-locale >> /etc/locale.conf
+export $sel-locale
 arch-chroot /mnt echo "KEYMAP=$keymap" >> /etc/vconsole.conf
 echo
 echo "== Localisation Set =="
@@ -119,10 +110,10 @@ echo
 echo
 echo "== Setting Network =="
 echo
-arch-chroot /mnt echo $hostname > /etc/hostname
-arch-chroot /mnt echo "127.0.0.1" '/t' "localhost" >> /etc/hosts
-arch-chroot /mnt echo "::1" '/t' '/t' "localhost" >> /etc/hosts
-arch-chroot /mnt echo "127.0.1.1" '\t' "$hostname.localdomain" '\t' "$hostname" >> /etc/hosts
+echo $hostname > /mnt/etc/hostname
+echo "127.0.0.1" '/t' "localhost" >> /mnt/etc/hosts
+echo "::1" '/t' '/t' "localhost" >> /mnt/etc/hosts
+echo "127.0.1.1" '\t' $hostname "localdomain" '\t' "$hostname" >> /mnt/etc/hosts
 echo
 echo "== Network Set =="
 echo
@@ -164,7 +155,7 @@ echo "== Creating New User - $username =="
 echo
 arch-chroot /mnt useradd -mG wheel $username
 arch-chroot /mnt passwd $username
-nano /etc/sudoers
+nano /mnt/etc/sudoers
 echo
 echo "== New User - $username Created =="
 echo

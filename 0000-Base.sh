@@ -13,10 +13,10 @@
 ###########################################
 
 # Variables
-sel-keyboard=us
-sel-country=Australia
-sel-locale=en_AU.UTF-8
-sel-timezone=Australia/Sydney
+selkeyboard=us
+selcountry=Australia
+sellocale=en_AU.UTF-8
+seltimezone=Australia/Sydney
 
 bootpart=/dev/sda1
 swappart=/dev/sda2
@@ -43,7 +43,7 @@ echo
 pacman -Syyy
 pacman -S reflector --noconfirm
 cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.backup
-reflector -c $sel-country -a 6 --sort rate --save /etc/pacman.d/mirrorlist
+reflector -c $selcountry -a 6 --sort rate --save /etc/pacman.d/mirrorlist
 pacman -Syyy
 echo
 echo "== Mirrorlist Configured =="
@@ -95,12 +95,12 @@ echo
 echo
 echo "== Setting Localisation =="
 echo
-arch-chroot /mnt timedatectl set-timezone $sel-timezone
+arch-chroot /mnt timedatectl set-timezone $seltimezone
 arch-chroot /mnt hwclock --systohc --localtime
-arch-chroot /mnt echo $sel-locale >> /etc/locale.conf
+arch-chroot /mnt echo $sellocale >> /etc/locale.conf
 arch-chroot /mnt locale-gen
-arch-chroot /mnt echo $sel-locale >> /etc/locale.conf
-export $sel-locale
+arch-chroot /mnt echo $sellocale >> /etc/locale.conf
+export $sellocale
 arch-chroot /mnt echo "KEYMAP=$keymap" >> /etc/vconsole.conf
 echo
 echo "== Localisation Set =="

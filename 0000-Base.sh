@@ -60,9 +60,12 @@ echo
 mkfs.fat -F32 $bootpart 
 mkfs.ext4 $rootpart
 mkswap $swappart
+fdisk -l
 echo
 echo "== Partitions Formatted =="
 echo
+read -p "Press Enter to Continue...."
+clear
 
 # Mount Partitions
 echo
@@ -73,11 +76,11 @@ mount $rootpart /mnt
 mkdir /mnt/boot
 mount $bootpart /mnt/boot
 lsblk
-read -p "Press Enter to Continue...."
-clear
 echo
 echo "== Partitions Mounted =="
 echo
+read -p "Press Enter to Continue...."
+clear
 
 # Install Base
 echo
@@ -153,7 +156,7 @@ clear
 # Install Bootloader
 echo
 echo "== Installing Bootloader =="
-arch-chroot /mnt pacman -S grub efibootmgr networkmanager network-manager-applet wireless_tools wpa_supplicant dialog os-prober mtools dosfstools base-devel linux-headers reflector git bluez bluez-utils bluez-libs pulseaudio-bluetooth cups ntfs-3g openssh avahi --noconfirm --needed
+arch-chroot /mnt pacman -S grub efibootmgr networkmanager network-manager-applet wireless_tools wpa_supplicant dialog os-prober mtools dosfstools base-devel linux-headers reflector git sudo bluez bluez-utils bluez-libs pulseaudio-bluetooth cups ntfs-3g openssh avahi --noconfirm --needed
 arch-chroot /mnt grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=ARCH
 arch-chroot /mnt grub-mkconfig -o /boot/grub/grub.cfg
 echo

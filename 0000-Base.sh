@@ -131,9 +131,9 @@ echo
 echo "== Setting Network =="
 echo
 echo $hostname > /mnt/etc/hostname
-echo -e "127.0.0.1" '/t' "localhost" >> /mnt/etc/hosts
-echo -e "::1" '/t' '/t' "localhost" >> /mnt/etc/hosts
-echo -e "127.0.1.1" '\t' $hostname "localdomain" '\t' "$hostname" >> /mnt/etc/hosts
+echo "127.0.0.1		localhost" >> /mnt/etc/hosts
+echo "::1			localhost" >> /mnt/etc/hosts
+echo "127.0.1.1		"$hostname".localdomain	$hostname" >> /mnt/etc/hosts
 cat /mnt/etc/hostname
 echo
 cat /mnt/etc/hosts

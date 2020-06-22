@@ -15,7 +15,7 @@
 # Variables
 syskeyboard=us
 syscountry=Australia
-syslocale=en_AU.UTF-8
+syslocale="en_AU.UTF-8 UTF-8"
 systimezone=Australia/Sydney
 
 bootpart=/dev/sda1
@@ -131,9 +131,9 @@ echo
 echo "== Setting Network =="
 echo
 echo $hostname > /mnt/etc/hostname
-echo "127.0.0.1" '/t' "localhost" >> /mnt/etc/hosts
-echo "::1" '/t' '/t' "localhost" >> /mnt/etc/hosts
-echo "127.0.1.1" '\t' $hostname "localdomain" '\t' "$hostname" >> /mnt/etc/hosts
+echo -e "127.0.0.1" '/t' "localhost" >> /mnt/etc/hosts
+echo -e "::1" '/t' '/t' "localhost" >> /mnt/etc/hosts
+echo -e "127.0.1.1" '\t' $hostname "localdomain" '\t' "$hostname" >> /mnt/etc/hosts
 cat /mnt/etc/hostname
 echo
 cat /mnt/etc/hosts

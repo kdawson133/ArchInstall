@@ -114,10 +114,10 @@ echo "== Setting Localisation =="
 echo
 arch-chroot /mnt timedatectl set-timezone $systimezone
 arch-chroot /mnt hwclock --systohc --localtime
-arch-chroot /mnt echo $syslocale >> /etc/locale.gen
+echo $syslocale >> /mnt/etc/locale.gen
 arch-chroot /mnt locale-gen
-arch-chroot /mnt echo $syslocale >> /etc/locale.conf
-arch-chroot /mnt echo KEYMAP=$syskeyboard >> /etc/vconsole.conf
+echo $syslocale >> /mnt/etc/locale.conf
+echo KEYMAP=$syskeyboard >> /mnt/etc/vconsole.conf
 cat /mnt/etc/locale.conf
 cat /mnt/etc/vconsole.conf
 echo

@@ -15,7 +15,8 @@
 # Variables
 syskeyboard=us
 syscountry=Australia
-syslocale="en_AU.UTF-8 UTF-8"
+syslocale=en_AU.UTF-8
+genlocale="en_AU.UTF-8 UTF-8"
 systimezone=Australia/Sydney
 
 bootpart=/dev/sda1
@@ -114,7 +115,7 @@ echo "== Setting Localisation =="
 echo
 arch-chroot /mnt timedatectl set-timezone $systimezone
 arch-chroot /mnt hwclock --systohc --localtime
-echo $syslocale >> /mnt/etc/locale.gen
+echo $genlocale >> /mnt/etc/locale.gen
 arch-chroot /mnt locale-gen
 echo $syslocale >> /mnt/etc/locale.conf
 echo KEYMAP=$syskeyboard >> /mnt/etc/vconsole.conf

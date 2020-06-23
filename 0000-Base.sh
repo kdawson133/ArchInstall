@@ -157,7 +157,7 @@ clear
 # Install Bootloader
 echo
 echo "== Installing Bootloader =="
-arch-chroot /mnt pacman -S grub efibootmgr efivar networkmanager network-manager-applet wireless_tools wpa_supplicant dialog os-prober mtools dosfstools gvfs-smb base-devel linux-headers reflector git sudo bluez bluez-utils bluez-libs bluez-firmware pulseaudio-bluetooth cups ntfs-3g openssh nss-mdns avahi --noconfirm --needed
+arch-chroot /mnt pacman -S grub efibootmgr efivar networkmanager network-manager-applet wireless_tools wpa_supplicant dialog os-prober mtools dosfstools gvfs-smb base-devel linux-headers reflector git sudo bluez bluez-utils bluez-libs bluez-firmware alsa-utils alsa-plugins pulseaudio pulseaudio-alsa pavucontrol pulseaudio-bluetooth cups cups-pdf ghostscript gsfonts ntfs-3g openssh nss-mdns avahi --noconfirm --needed
 arch-chroot /mnt grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=ARCH
 arch-chroot /mnt grub-mkconfig -o /boot/grub/grub.cfg
 echo

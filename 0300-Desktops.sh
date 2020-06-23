@@ -10,6 +10,8 @@ PKGS=(
         'nemo-fileroller'		# Cinnamon plugin
         'nemo-share'			# Cinnamon plugin
         'blueberry'				# Cinnamon bluetooth
+        'volumeicon'			# System tray volume control
+        'system-config-printer'	# GUI for CUPS
         'xdg-utils'				# Xdg utilities 
 )
 

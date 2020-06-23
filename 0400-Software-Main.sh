@@ -7,9 +7,6 @@ PKGS=(
 
     # SYSTEM --------------------------------------------------------------
 
-    'linux-LTS'             # Stable kernel
-    'linux-headers'         # For compiling modules
-    'base-devel'            # Required for compilation
 
     # TERMINAL UTILITIES --------------------------------------------------
 
@@ -18,15 +15,12 @@ PKGS=(
     'curl'                  # Remote content retrieval
     'file-roller'           # Archive utility
     'gtop'                  # System monitoring via terminal
-    'gufw'                  # Firewall manager
     'libsecret'             # Storing passwords
     'hardinfo'              # Hardware info app
     'htop'                  # Process viewer
     'neofetch'              # Shows system info when you launch terminal
     'ntp'                   # Network Time Protocol to set time via network.
     'numlockx'              # Turns on numlock in X11
-    'openssh'               # SSH connectivity tools
-    'os-prober'             # Utility to detect other OSes
     'rsync'                 # Remote file sync utility
     'speedtest-cli'         # Internet speed via terminal
     'unrar'                 # RAR compression program
@@ -46,10 +40,7 @@ PKGS=(
 
     'autofs'                # Auto-mounter
     'exfat-utils'           # Mount exFat drives
-    'mtools'                # MSDOS utilities
-    'dosfstools'            # DOS filesystem utilities
     'gparted'               # Disk utility
-    'ntfs-3g'               # Open source implementation of NTFS file system
     'parted'                # Disk utility
 
     # GENERAL UTILITIES ---------------------------------------------------
@@ -97,8 +88,8 @@ PKGS=(
 
     # VIRTUALIZATION ------------------------------------------------------
 
-    'virtualbox'
-    'virtualbox-host-modules-arch'
+#    'virtualbox'
+#    'virtualbox-host-modules-arch'
 )
 
 for PKG in "${PKGS[@]}"; do

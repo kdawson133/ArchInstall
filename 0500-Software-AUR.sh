@@ -7,21 +7,17 @@ PKGS=(
 
     # SYSTEM UTILITIES ----------------------------------------------------
 
-    'gtkhash'                   # Checksum verifier
-    'pamac'                     # Graphical package manager
+#    'pamac'                     # Graphical package manager
 
     # TERMINAL UTILITIES --------------------------------------------------
 
-    'hyper'                     # Terminal emulator built on Electron
+    'micro'                     # Replacement for nano
 
     # UTILITIES -----------------------------------------------------------
 
-    'samba'                     # Samba File Sharing
-    'gnome-vfs'                 # Gnome File System Access
 
     # DEVELOPMENT ---------------------------------------------------------
     
-    'visual-studio-code-bin'    # Good text editor
     'sublime-text'              # Even Better editor
     'gitahead-bin'              # git client
     'typora'                    # Markdown editor
@@ -49,13 +45,10 @@ PKGS=(
     'numix-icon-theme-git'
     'papirus-icon-theme' 
     'sardi-icons'
-    'alacarte-xfce'
-    'mugshot'
     'mint-themes'
     'mint-y-icons'
     'mint-x-icons'
-    'lightdm-slick-greeter'
-    'lightdm-settings'
+    
 )
 
 for PKG in "${PKGS[@]}"; do

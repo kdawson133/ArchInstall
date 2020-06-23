@@ -16,13 +16,21 @@ PKGS=(
 		'nvidia-settings'		# Nvidia setting applet
 		'opencl-nvidia'		 	# Nvidia OpenCL
         'mesa'                  # Open source version of OpenGL
-#        'xf86-input-libinput'  # Trackpad drivers
+#       'xf86-input-libinput'   # Trackpad drivers
+        'lightdm'               # Display manager for login screen
 )
 
 for PKG in "${PKGS[@]}"; do
     echo "INSTALLING: ${PKG}"
     sudo pacman -S "$PKG" --noconfirm --needed
 done
+
+yay -Sy lightdm-slick-greeter lightdm-settings --noconfirm --needed
+sudo cp lightdm.conf /etc/lightdm/
+sudo cp slick-greeter.conf /etc/lightdm
+sudo cp lightdm-slick-greeter.png /usr/share/slick-greeter 
+sudo systemctl enable lightdm.service
+#sudo systemctl start lightdm.service
 
 echo
 echo "== Display Server Installed =="

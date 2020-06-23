@@ -3,12 +3,6 @@ echo
 echo "== Installing AUR Software =="
 echo
 
-cd "${HOME}"
-
-echo "Cloning: YAY"
-git clone "https://aur.archlinux.org/yay.git"
-
-
 PKGS=(
 
     # SYSTEM UTILITIES ----------------------------------------------------
@@ -64,14 +58,9 @@ PKGS=(
     'lightdm-settings'
 )
 
-
-cd ${HOME}/yay
-makepkg -si
-
 for PKG in "${PKGS[@]}"; do
     yay -S --noconfirm --needed $PKG
 done
-cp lightdm-slick-greeter.png /usr/share/slick-greeter/lightdm-slick-greeter.png
 echo
 echo "== AUR Software Installed =="
 echo

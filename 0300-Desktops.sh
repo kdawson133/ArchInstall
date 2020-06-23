@@ -9,8 +9,8 @@ PKGS=(
         'cinnamon'				# Cinnamon
         'nemo-fileroller'		# Cinnamon plugin
         'nemo-share'			# Cinnamon plugin
-        'xdg-utils'				# Xdg utilities
-        'lightdm'				# Light DM 
+        'blueberry'				# Cinnamon bluetooth
+        'xdg-utils'				# Xdg utilities 
 )
 
 for PKG in "${PKGS[@]}"; do
@@ -18,12 +18,8 @@ for PKG in "${PKGS[@]}"; do
     sudo pacman -S "$PKG" --noconfirm --needed
 done
 
-sudo cp lightdm.conf /etc/lightdm/
-sudo cp slick-greeter.conf /etc/lightdm
-sudo cp lightdm-slick-greeter.png /usr/share/slick-greeter 
 
-sudo systemctl enable lightdm.service
-#sudo systemctl start lightdm.service
+
 
 echo
 echo "== Desktops Installed =="

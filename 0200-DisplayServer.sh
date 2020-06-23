@@ -26,9 +26,9 @@ for PKG in "${PKGS[@]}"; do
 done
 
 yay -Sy lightdm-slick-greeter lightdm-settings --noconfirm --needed
-sudo cp lightdm.conf /etc/lightdm/
-sudo cp slick-greeter.conf /etc/lightdm
-sudo cp lightdm-slick-greeter.png /usr/share/slick-greeter 
+sudo cp lightdm.conf /etc/lightdm/lightdm.conf
+sudo cp slick-greeter.conf /etc/lightdm/slick-greeter.conf
+sudo cp lightdm-slick-greeter.png /usr/share/slick-greeter/lightdm-slick-greeter.png 
 sudo systemctl enable lightdm.service
 #sudo systemctl start lightdm.service
 

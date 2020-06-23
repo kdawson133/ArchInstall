@@ -117,7 +117,7 @@ arch-chroot /mnt timedatectl set-timezone $systimezone
 arch-chroot /mnt hwclock --systohc --localtime
 echo $genlocale >> /mnt/etc/locale.gen
 arch-chroot /mnt locale-gen
-echo $syslocale >> /mnt/etc/locale.conf
+echo LANG=$syslocale >> /mnt/etc/locale.conf
 echo KEYMAP=$syskeyboard >> /mnt/etc/vconsole.conf
 cat /mnt/etc/locale.conf
 cat /mnt/etc/vconsole.conf

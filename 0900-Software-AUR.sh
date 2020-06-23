@@ -69,7 +69,7 @@ cd ${HOME}/yay
 makepkg -si
 
 for PKG in "${PKGS[@]}"; do
-    yay -S --noconfirm $PKG
+    yay -S --noconfirm --needed $PKG
 done
 cp lightdm-slick-greeter.png /usr/share/slick-greeter/lightdm-slick-greeter.png
 echo

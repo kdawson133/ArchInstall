@@ -327,7 +327,7 @@ chmod +x *.sh
 
 then run the all the scrips in numerical order, for example:
 ```bash
-sudo sh 00-Mirrors.sh 
+sudo sh 0100-Yay.sh 
 ```
  then reboot.
 

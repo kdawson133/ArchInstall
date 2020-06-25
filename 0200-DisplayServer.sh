@@ -20,6 +20,7 @@ PKGS=(
         'xorg-apps'             # XOrg apps group
         'xorg-xinit'            # XOrg init
         'xorg-server-devel'		# XOrg delopment libraries
+        'xf86-video-vesa'       # VESA Video Driver
 #		'xf86-video-vmware'		# VM video driver
 #       'xf86-video-intel'      # Intel 2D/3D video driver
 #		'xf86-video-amdgpu'	 	# AMD 2D/3D video driver

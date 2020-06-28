@@ -68,7 +68,8 @@ PKGS=(
 
     # DEVELOPMENT ---------------------------------------------------------
     
-    'meld'                  # File/directory comparison
+    'sublime-text'          # Excellent text editor
+    'sublime-merge'         # Excellent git client
     'nodejs'                # Javascript runtime environment
     'npm'                   # Node package manager
     'python'                # Scripting language

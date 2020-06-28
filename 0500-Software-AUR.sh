@@ -30,9 +30,6 @@ PKGS=(
 
     # DEVELOPMENT ---------------------------------------------------------
     
-    'sublime-text'              # Even Better editor
-    'sublime-merge'             # git client
-    'gitahead-bin'              # git client has bug try again when fixed
     'typora'                    # Markdown editor
 
     # MEDIA ---------------------------------------------------------------

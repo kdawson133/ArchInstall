@@ -18,8 +18,7 @@ PKGS=(
 
     # SYSTEM UTILITIES ----------------------------------------------------
 
-#   'pamac'                     # Graphical package manager
-    'bluez-firmware'            # Firmware for bluetooth chips
+#    'pamac'                     # Graphical package manager
 
     # TERMINAL UTILITIES --------------------------------------------------
 

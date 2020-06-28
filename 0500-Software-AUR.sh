@@ -18,7 +18,8 @@ PKGS=(
 
     # SYSTEM UTILITIES ----------------------------------------------------
 
-#    'pamac'                     # Graphical package manager
+#   'pamac'                     # Graphical package manager
+    'bluez-firmware'            # Bluetooth chip firmware
 
     # TERMINAL UTILITIES --------------------------------------------------
 
@@ -29,8 +30,6 @@ PKGS=(
 
     # DEVELOPMENT ---------------------------------------------------------
     
-    'sublime-text'              # Even Better editor
-    'gitahead-bin'              # git client
     'typora'                    # Markdown editor
 
     # MEDIA ---------------------------------------------------------------
